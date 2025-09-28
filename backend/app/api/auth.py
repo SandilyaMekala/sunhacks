@@ -13,7 +13,7 @@ MOCK_USERS = {
         "password": "demo123",
         "name": "John Employee",
         "role": "employee",
-        "email": "john@acmelabs.com",
+        "email": "john@techflowsolutions.com",
         "department": "Engineering"
     },
     "admin.demo": {
@@ -22,17 +22,44 @@ MOCK_USERS = {
         "password": "admin123",
         "name": "Jane Admin",
         "role": "admin",
-        "email": "jane@acmelabs.com",
+        "email": "jane@techflowsolutions.com",
         "department": "Management"
     },
-    # Additional demo users
-    "anita.rao": {
+    # Additional demo employees
+    "sarah.chen": {
         "id": 3,
+        "username": "sarah.chen",
+        "password": "password123",
+        "name": "Sarah Chen",
+        "role": "employee",
+        "email": "sarah@techflowsolutions.com",
+        "department": "Engineering"
+    },
+    "michael.rodriguez": {
+        "id": 4,
+        "username": "michael.rodriguez",
+        "password": "password123",
+        "name": "Michael Rodriguez",
+        "role": "employee",
+        "email": "michael@techflowsolutions.com",
+        "department": "DevOps"
+    },
+    "emily.johnson": {
+        "id": 5,
+        "username": "emily.johnson",
+        "password": "password123",
+        "name": "Emily Johnson",
+        "role": "employee",
+        "email": "emily@techflowsolutions.com",
+        "department": "Design"
+    },
+    "anita.rao": {
+        "id": 6,
         "username": "anita.rao",
         "password": "password123",
         "name": "Anita Rao",
         "role": "employee",
-        "email": "anita@acmelabs.com",
+        "email": "anita@techflowsolutions.com",
         "department": "Engineering"
     }
 }

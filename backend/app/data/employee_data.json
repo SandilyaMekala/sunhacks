@@ -192,6 +192,175 @@
     "carbonProgress": 90.6,
     "unit": "kg CO2e"
   },
+  "gamification": {
+    "currentPoints": 2850,
+    "level": 12,
+    "levelName": "Carbon Champion",
+    "nextLevel": "Eco Master",
+    "pointsToNextLevel": 150,
+    "totalPointsForNextLevel": 3000,
+    "streak": {
+      "current": 18,
+      "best": 25,
+      "type": "days",
+      "description": "Consecutive days under carbon target"
+    },
+    "badges": [
+      {
+        "id": "green_office_champion",
+        "name": "Green Office Champion",
+        "description": "Reduced office carbon footprint by 20%+",
+        "icon": "🏆",
+        "color": "#10b981",
+        "earnedDate": "2025-09-15",
+        "points": 500,
+        "rarity": "gold"
+      },
+      {
+        "id": "coffee_hero",
+        "name": "Coffee Sustainability Hero",
+        "description": "Used reusable cup for 30+ days",
+        "icon": "☕",
+        "color": "#8b5cf6",
+        "earnedDate": "2025-09-20",
+        "points": 250,
+        "rarity": "silver"
+      },
+      {
+        "id": "stair_climber",
+        "name": "Elevator Alternative Champion",
+        "description": "Took stairs instead of elevator 100+ times",
+        "icon": "🏃",
+        "color": "#f59e0b",
+        "earnedDate": "2025-09-25",
+        "points": 300,
+        "rarity": "silver"
+      },
+      {
+        "id": "energy_saver",
+        "name": "Energy Conservation Master",
+        "description": "Consistently under daily energy target",
+        "icon": "⚡",
+        "color": "#3b82f6",
+        "earnedDate": "2025-09-10",
+        "points": 400,
+        "rarity": "gold"
+      },
+      {
+        "id": "paper_reducer",
+        "name": "Digital Document Champion",
+        "description": "90% reduction in printing",
+        "icon": "🌳",
+        "color": "#059669",
+        "earnedDate": "2025-09-22",
+        "points": 200,
+        "rarity": "bronze"
+      }
+    ],
+    "achievements": [
+      {
+        "id": "streak_master",
+        "name": "18-Day Streak Master",
+        "description": "Maintained carbon target for 18 consecutive days",
+        "icon": "🔥",
+        "progress": 18,
+        "target": 20,
+        "unit": "days",
+        "reward": "100 bonus points",
+        "category": "consistency"
+      },
+      {
+        "id": "carbon_reducer",
+        "name": "Carbon Reduction Expert",
+        "description": "Reduced total carbon footprint by 25%",
+        "icon": "📉",
+        "progress": 22,
+        "target": 25,
+        "unit": "% reduction",
+        "reward": "Eco Master badge",
+        "category": "impact"
+      },
+      {
+        "id": "task_optimizer",
+        "name": "Task Efficiency Optimizer",
+        "description": "Optimized carbon footprint of 8 different tasks",
+        "icon": "🎯",
+        "progress": 6,
+        "target": 8,
+        "unit": "tasks",
+        "reward": "Task Master badge",
+        "category": "optimization"
+      }
+    ],
+    "leaderboard": {
+      "weeklyRank": 3,
+      "monthlyRank": 2,
+      "totalEmployees": 45,
+      "percentile": 95
+    },
+    "dailyTasks": [
+      {
+        "id": "reusable_cup",
+        "name": "Use Reusable Coffee Cup",
+        "description": "Bring your own cup for coffee/tea",
+        "points": 20,
+        "completed": true,
+        "icon": "☕",
+        "category": "office"
+      },
+      {
+        "id": "take_stairs",
+        "name": "Take Stairs (3+ times)",
+        "description": "Use stairs instead of elevator",
+        "points": 15,
+        "completed": true,
+        "progress": 4,
+        "target": 3,
+        "icon": "🏃",
+        "category": "building"
+      },
+      {
+        "id": "lights_off",
+        "name": "Turn Off Unused Lights",
+        "description": "Switch off lights in empty areas",
+        "points": 10,
+        "completed": false,
+        "progress": 2,
+        "target": 3,
+        "icon": "💡",
+        "category": "energy"
+      },
+      {
+        "id": "duplex_printing",
+        "name": "Duplex Printing Only",
+        "description": "Use double-sided printing for all documents",
+        "points": 25,
+        "completed": true,
+        "icon": "🖨️",
+        "category": "office"
+      },
+      {
+        "id": "ac_optimal",
+        "name": "Optimal AC Temperature",
+        "description": "Keep office AC at 72°F or higher",
+        "points": 30,
+        "completed": false,
+        "progress": 0,
+        "target": 1,
+        "icon": "❄️",
+        "category": "climate"
+      }
+    ],
+    "weeklyChallenge": {
+      "name": "Green Office Week",
+      "description": "Complete all daily eco-friendly tasks for 5 days",
+      "progress": 3,
+      "target": 5,
+      "reward": "500 bonus points + Eco Week badge",
+      "icon": "🌱",
+      "deadline": "2025-09-30"
+    }
+  },
   "nudges": [
     "🌱 Fantastic! Your office carbon footprint is 22% lower than last month",
     "🏆 You've earned the 'Green Office Champion' achievement - amazing work!",

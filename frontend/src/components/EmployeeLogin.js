@@ -120,6 +120,13 @@ const EmployeeLogin = () => {
         </form>
 
         <div className="login-footer">
+          <div style={{ marginBottom: '15px', padding: '10px', background: '#f8fafc', borderRadius: '6px', fontSize: '12px' }}>
+            <strong>Demo Employees Available:</strong><br />
+            • <strong>employee.demo</strong> / demo123 (John Employee)<br />
+            • <strong>sarah.chen</strong> / password123 (Sarah Chen)<br />
+            • <strong>michael.rodriguez</strong> / password123 (Michael Rodriguez)<br />
+            • <strong>emily.johnson</strong> / password123 (Emily Johnson)
+          </div>
           <p>
             Are you an admin? <Link to="/login/admin">Login as Admin</Link>
           </p>

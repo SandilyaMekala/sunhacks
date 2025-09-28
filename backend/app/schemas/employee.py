@@ -35,6 +35,94 @@ class Device(BaseModel):
     usage: float
     unit: str
 
+class Task(BaseModel):
+    name: str
+    category: str
+    duration: str
+    carbonFootprint: float
+    unit: str
+    efficiency: str
+    description: str
+    carbonIntensity: str
+    tips: str
+
+class TaskSummary(BaseModel):
+    totalTasks: int
+    totalCarbonFootprint: float
+    averageCarbonPerTask: float
+    mostEfficientTask: str
+    highestImpactTask: str
+    dailyCarbonTarget: float
+    carbonProgress: float
+    unit: str
+
+class Streak(BaseModel):
+    current: int
+    best: int
+    type: str
+    description: str
+
+class Badge(BaseModel):
+    id: str
+    name: str
+    description: str
+    icon: str
+    color: str
+    earnedDate: str
+    points: int
+    rarity: str
+
+class Achievement(BaseModel):
+    id: str
+    name: str
+    description: str
+    icon: str
+    progress: int
+    target: int
+    unit: str
+    reward: str
+    category: str
+
+class Leaderboard(BaseModel):
+    weeklyRank: int
+    monthlyRank: int
+    totalEmployees: int
+    percentile: int
+
+class DailyTask(BaseModel):
+    id: str
+    name: str
+    description: str
+    points: int
+    completed: bool
+    progress: Optional[int] = None
+    target: Optional[int] = None
+    icon: str
+    category: str
+
+class WeeklyChallenge(BaseModel):
+    name: str
+    description: str
+    progress: int
+    target: int
+    reward: str
+    icon: str
+    deadline: str
+
+class Gamification(BaseModel):
+    currentPoints: int
+    level: int
+    levelName: str
+    nextLevel: str
+    pointsToNextLevel: int
+    totalPointsForNextLevel: int
+    streak: Streak
+    badges: List[Badge]
+    achievements: List[Achievement]
+    leaderboard: Leaderboard
+    dailyTasks: List[DailyTask]
+    weeklyChallenge: WeeklyChallenge
+
 class EmployeeDashboardResponse(BaseModel):
     employeeInfo: EmployeeInfo
     companyTarget: CompanyTarget
@@ -42,6 +130,9 @@ class EmployeeDashboardResponse(BaseModel):
     teamProgress: TeamProgress
     realTimeUsage: List[RealTimeUsagePoint]
     myDevices: List[Device]
+    myTasks: Optional[List[Task]] = None
+    taskSummary: Optional[TaskSummary] = None
+    gamification: Optional[Gamification] = None
     nudges: List[str]
     recentActivity: List[str]
 

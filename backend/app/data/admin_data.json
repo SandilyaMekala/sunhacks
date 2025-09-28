@@ -285,5 +285,287 @@
     "⚡ Plan next phase of equipment upgrade program",
     "🎯 Set ambitious Q4 carbon reduction targets",
     "🏆 Recognize top carbon reduction contributors"
-  ]
+  ],
+  "adminGamification": {
+    "level": 15,
+    "levelName": "Sustainability Director",
+    "totalPoints": 4250,
+    "progressToNextLevel": 85,
+    "currentStreak": 32,
+    "badges": [
+      {
+        "name": "Team Leader Extraordinaire",
+        "icon": "🏅",
+        "description": "Successfully managed team carbon reduction for 6+ months",
+        "points": 750,
+        "rarity": "legendary",
+        "earnedDate": "2024-09-15",
+        "category": "Leadership"
+      },
+      {
+        "name": "Data Insights Master",
+        "icon": "📊",
+        "description": "Generated 100+ insightful reports and analytics",
+        "points": 500,
+        "rarity": "gold",
+        "earnedDate": "2024-10-01",
+        "category": "Analytics"
+      },
+      {
+        "name": "Carbon Reduction Champion",
+        "icon": "🌍",
+        "description": "Led company to achieve 20% carbon footprint reduction",
+        "points": 1000,
+        "rarity": "legendary",
+        "earnedDate": "2024-10-15",
+        "category": "Environmental"
+      },
+      {
+        "name": "Innovation Catalyst",
+        "icon": "💡",
+        "description": "Implemented 3 major sustainability initiatives",
+        "points": 600,
+        "rarity": "gold",
+        "earnedDate": "2024-10-20",
+        "category": "Innovation"
+      },
+      {
+        "name": "Employee Engagement Pro",
+        "icon": "👥",
+        "description": "Achieved 95% employee participation in green initiatives",
+        "points": 400,
+        "rarity": "silver",
+        "earnedDate": "2024-11-01",
+        "category": "Engagement"
+      },
+      {
+        "name": "Consistency King",
+        "icon": "⭐",
+        "description": "Maintained 30+ day streak of sustainable leadership",
+        "points": 300,
+        "rarity": "silver",
+        "earnedDate": "2024-11-05",
+        "category": "Consistency"
+      }
+    ],
+    "achievements": [
+      {
+        "name": "Department Motivator",
+        "description": "All departments exceeded their monthly targets",
+        "progress": 100,
+        "maxProgress": 100,
+        "icon": "🎯",
+        "category": "Management",
+        "points": 200,
+        "completed": true
+      },
+      {
+        "name": "Cost Reduction Hero",
+        "description": "Achieved $50,000+ in energy cost savings",
+        "progress": 52000,
+        "maxProgress": 50000,
+        "icon": "💰",
+        "category": "Financial",
+        "points": 300,
+        "completed": true
+      },
+      {
+        "name": "Innovation Leader",
+        "description": "Launch 5 new sustainability programs",
+        "progress": 3,
+        "maxProgress": 5,
+        "icon": "🚀",
+        "category": "Innovation",
+        "points": 400,
+        "completed": false
+      },
+      {
+        "name": "Team Growth Catalyst",
+        "description": "Improve overall team efficiency to 90%+",
+        "progress": 87,
+        "maxProgress": 90,
+        "icon": "📈",
+        "category": "Team Development",
+        "points": 350,
+        "completed": false
+      },
+      {
+        "name": "Sustainability Evangelist",
+        "description": "Conduct 12 training sessions this year",
+        "progress": 8,
+        "maxProgress": 12,
+        "icon": "🎓",
+        "category": "Education",
+        "points": 500,
+        "completed": false
+      }
+    ],
+    "dailyAdminTasks": [
+      {
+        "name": "Review Team Performance",
+        "description": "Check departmental progress and provide feedback",
+        "completed": true,
+        "points": 50,
+        "icon": "📊",
+        "category": "Management",
+        "priority": "high"
+      },
+      {
+        "name": "Approve Sustainability Initiatives",
+        "description": "Review and approve pending green projects",
+        "completed": true,
+        "points": 40,
+        "icon": "✅",
+        "category": "Leadership",
+        "priority": "high"
+      },
+      {
+        "name": "Analyze Energy Reports",
+        "description": "Deep dive into today's energy consumption data",
+        "completed": false,
+        "points": 35,
+        "icon": "🔍",
+        "category": "Analytics",
+        "priority": "medium"
+      },
+      {
+        "name": "Schedule Team Meeting",
+        "description": "Organize weekly sustainability progress review",
+        "completed": true,
+        "points": 25,
+        "icon": "📅",
+        "category": "Communication",
+        "priority": "medium"
+      },
+      {
+        "name": "Recognize Top Performer",
+        "description": "Acknowledge and celebrate an outstanding employee",
+        "completed": false,
+        "points": 30,
+        "icon": "🏆",
+        "category": "Recognition",
+        "priority": "low"
+      },
+      {
+        "name": "Update Sustainability Dashboard",
+        "description": "Refresh key metrics and visualizations",
+        "completed": true,
+        "points": 20,
+        "icon": "📋",
+        "category": "Reporting",
+        "priority": "low"
+      }
+    ],
+    "weeklyAdminChallenges": [
+      {
+        "name": "Department Competition Champion",
+        "description": "Organize a friendly competition between departments",
+        "progress": 2,
+        "maxProgress": 1,
+        "points": 300,
+        "icon": "🏁",
+        "completed": true,
+        "daysLeft": 0
+      },
+      {
+        "name": "Innovation Workshop Host",
+        "description": "Lead 2 brainstorming sessions for sustainability ideas",
+        "progress": 1,
+        "maxProgress": 2,
+        "points": 250,
+        "icon": "💡",
+        "completed": false,
+        "daysLeft": 3
+      },
+      {
+        "name": "Cost Analysis Deep Dive",
+        "description": "Conduct comprehensive cost-benefit analysis",
+        "progress": 0,
+        "maxProgress": 1,
+        "points": 200,
+        "icon": "💼",
+        "completed": false,
+        "daysLeft": 5
+      }
+    ],
+    "teamLeaderboard": [
+      {
+        "department": "Engineering",
+        "points": 8750,
+        "rank": 1,
+        "change": 2,
+        "efficiency": 92,
+        "memberCount": 12
+      },
+      {
+        "department": "Marketing",
+        "points": 7400,
+        "rank": 2,
+        "change": -1,
+        "efficiency": 88,
+        "memberCount": 8
+      },
+      {
+        "department": "Sales",
+        "points": 6850,
+        "rank": 3,
+        "change": 1,
+        "efficiency": 85,
+        "memberCount": 10
+      },
+      {
+        "department": "HR",
+        "points": 5900,
+        "rank": 4,
+        "change": -2,
+        "efficiency": 82,
+        "memberCount": 6
+      },
+      {
+        "department": "Finance",
+        "points": 5200,
+        "rank": 5,
+        "change": 0,
+        "efficiency": 79,
+        "memberCount": 7
+      }
+    ],
+    "recentActivity": [
+      {
+        "type": "achievement",
+        "message": "Engineering team completed 'Zero Waste Week' challenge!",
+        "timestamp": "2 hours ago",
+        "icon": "🏆",
+        "points": 500
+      },
+      {
+        "type": "milestone",
+        "message": "Company reached 20% carbon reduction milestone",
+        "timestamp": "1 day ago",
+        "icon": "🎯",
+        "points": 1000
+      },
+      {
+        "type": "recognition",
+        "message": "Sarah Chen earned 'Energy Saver Pro' badge",
+        "timestamp": "2 days ago",
+        "icon": "⭐",
+        "points": 100
+      },
+      {
+        "type": "challenge",
+        "message": "Marketing team won October sustainability challenge",
+        "timestamp": "3 days ago",
+        "icon": "🥇",
+        "points": 750
+      },
+      {
+        "type": "innovation",
+        "message": "New solar panel initiative approved and launched",
+        "timestamp": "1 week ago",
+        "icon": "☀️",
+        "points": 800
+      }
+    ]
+  }
 }

@@ -23,8 +23,6 @@ ChartJS.register(
   Legend
 );
 
-// =================== Child Components ===================
-
 const CompanyTarget = ({ targetKWh, currentKWh, progressPercent, unit }) => (
   <div className="company-target-bar" style={{ 
     backgroundColor: '#e6ffe6', padding: '8px', borderRadius: '4px', marginBottom: '20px', fontWeight: 'bold'
@@ -141,12 +139,33 @@ const RecentActivity = ({ activity }) => (
   </div>
 );
 
-// =================== Main Dashboard ===================
-
 const Employee = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  /* useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch('/api/admin/dashboard');
+        if (!response.ok) throw new Error('Network response not ok');
+        const apiData = await response.json();
+        setData(apiData);
+      } catch (err) {
+        console.error('Failed to fetch dashboard data:', err);
+        setError('Failed to load admin data.');
+        // fallback to mock data
+        setData(companyAdminData);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);*/
 
   useEffect(() => {
     try {

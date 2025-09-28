@@ -1,14 +1,12 @@
-/* =================== General Card Styles =================== */
 .card {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Contain floats and inner content */
+  overflow: hidden;
   box-sizing: border-box;
 }
 
-/* Card titles */
 .card h3 {
   font-size: 18px;
   margin-top: 0;
@@ -17,12 +15,11 @@
   margin-bottom: 15px;
 }
 
-/* =================== My Devices =================== */
 .my-devices dl {
   margin: 0;
   padding: 0;
   line-height: 2;
-  overflow: hidden; /* Contain floated dt/dd */
+  overflow: hidden;
 }
 
 .my-devices dt, .my-devices dd {
@@ -34,14 +31,12 @@
   float: right;
 }
 
-/* =================== Nudges & Recent Activity =================== */
 .nudges ul, .recent-activity ul {
   list-style: disc;
   padding-left: 20px;
   margin: 0;
 }
 
-/* =================== Real-Time Usage =================== */
 .real-time-usage div {
   width: 100%;
   background-color: #f7fafc;
@@ -52,14 +47,12 @@
   overflow-y: auto;
 }
 
-/* List styling inside Real-Time Usage (optional) */
 .real-time-usage ul {
   margin: 0;
   padding-left: 15px;
   font-size: 12px;
 }
 
-/* =================== Energy Rings =================== */
 .energy-rings-container {
   display: flex;
   justify-content: center;
@@ -67,7 +60,6 @@
   position: relative;
 }
 
-/* =================== Dashboard Grid Layout =================== */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -80,7 +72,6 @@
   gap: 20px;
 }
 
-/* =================== Loading / Error States =================== */
 .loading-state, .error-state {
   text-align: center;
   font-size: 16px;

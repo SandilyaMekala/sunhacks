@@ -13,10 +13,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-// Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-
-// --- Helper Components ---
 
 const CompanySummary = ({ summary }) => {
   const color = summary.comparisonPercent >= 0 ? 'red' : 'green';
@@ -70,7 +67,6 @@ const EmployeeTable = ({ employees }) => (
   </div>
 );
 
-// --- Real-Time Usage Chart (Line Graph) ---
 const RealTimeUsageChart = ({ data }) => {
   const chartData = {
     labels: data.map(point => point.time),
@@ -137,12 +133,32 @@ const QuickActions = ({ actions }) => (
   </div>
 );
 
-// --- Main Admin Component ---
-
 const Admin = () => {
   const [data, setData] = useState(companyAdminData);
   const [loading, setLoading] = useState(false); 
   const [error, setError] = useState(null);
+
+  /*useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch('/api/admin/dashboard');
+        if (!response.ok) throw new Error('Network response not ok');
+        const apiData = await response.json();
+        setData(apiData);
+      } catch (err) {
+        console.error('Failed to fetch dashboard data:', err);
+        setError('Failed to load admin data.');
+        setData(companyAdminData); // fallback to JSON
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);*/
 
   useEffect(() => {
     setLoading(true);

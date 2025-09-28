@@ -1,37 +1,289 @@
 {
   "adminInfo": {
-    "loggedAs": "Company Admin (Acme Labs)"
+    "loggedAs": "Energy Manager (TechFlow Solutions)"
   },
   "companySummary": {
-    "name": "Acme Labs",
-    "todayKWh": 3240,
-    "todayCost": 482,
-    "todayCO2": 1.34,
-    "comparisonPercent": -6,
-    "comparisonPeriod": "last week"
+    "name": "TechFlow Solutions",
+    "todayKWh": 2240,
+    "todayCost": 314,
+    "todayCO2": 0.89,
+    "comparisonPercent": -18,
+    "comparisonPeriod": "last month",
+    "totalEmployees": 8,
+    "avgPerEmployee": 280,
+    "topPerformer": "Sarah Chen",
+    "needsAttention": "Marcus Rodriguez"
   },
   "employeeData": [
-    { "name": "Anita Rao", "target": 240, "used": 112, "forecast": -10, "unit": "kWh/mo" },
-    { "name": "Ben Thomas", "target": 220, "used": 136, "forecast": -3, "unit": "kWh/mo" },
-    { "name": "Chen Li", "target": 260, "used": 170, "forecast": -15, "unit": "kWh/mo" },
-    { "name": "Diego Mar", "target": 250, "used": 190, "forecast": 6, "unit": "kWh/mo" },
-    { "name": "Eva Singh", "target": 230, "used": 115, "forecast": -8, "unit": "kWh/mo" },
-    { "name": "Fatima Noor", "target": 210, "used": 160, "forecast": -1, "unit": "kWh/mo" }
+    { 
+      "id": 1,
+      "name": "Sarah Chen", 
+      "target": 280, 
+      "used": 128, 
+      "forecast": -18, 
+      "unit": "kWh/mo",
+      "department": "Engineering",
+      "efficiency": 98,
+      "rank": 1
+    },
+    { 
+      "id": 2,
+      "name": "Michael Thompson", 
+      "target": 320, 
+      "used": 158, 
+      "forecast": -15, 
+      "unit": "kWh/mo",
+      "department": "DevOps",
+      "efficiency": 92,
+      "rank": 2
+    },
+    { 
+      "id": 3,
+      "name": "Priya Patel", 
+      "target": 290, 
+      "used": 142, 
+      "forecast": -12, 
+      "unit": "kWh/mo",
+      "department": "Design",
+      "efficiency": 91,
+      "rank": 3
+    },
+    { 
+      "id": 4,
+      "name": "James Wilson", 
+      "target": 310, 
+      "used": 168, 
+      "forecast": -8, 
+      "unit": "kWh/mo",
+      "department": "Engineering",
+      "efficiency": 89,
+      "rank": 4
+    },
+    { 
+      "id": 5,
+      "name": "Lisa Garcia", 
+      "target": 270, 
+      "used": 158, 
+      "forecast": -5, 
+      "unit": "kWh/mo",
+      "department": "Marketing",
+      "efficiency": 86,
+      "rank": 5
+    },
+    { 
+      "id": 6,
+      "name": "David Kim", 
+      "target": 300, 
+      "used": 175, 
+      "forecast": -3, 
+      "unit": "kWh/mo",
+      "department": "Operations",
+      "efficiency": 84,
+      "rank": 6
+    },
+    { 
+      "id": 7,
+      "name": "Emma Johnson", 
+      "target": 260, 
+      "used": 168, 
+      "forecast": -2, 
+      "unit": "kWh/mo",
+      "department": "HR",
+      "efficiency": 81,
+      "rank": 7
+    },
+    { 
+      "id": 8,
+      "name": "Marcus Rodriguez", 
+      "target": 340, 
+      "used": 215, 
+      "forecast": 2, 
+      "unit": "kWh/mo",
+      "department": "Sales",
+      "efficiency": 78,
+      "rank": 8
+    }
   ],
+  "employeeFootprints": {
+    "1": {
+      "id": 1,
+      "name": "Sarah Chen",
+      "totalMonthly": 128,
+      "dailyAverage": 4.3,
+      "devices": [
+        {"name": "MacBook Pro M2", "usage": 2.4, "hours": 8.5, "efficiency": 95},
+        {"name": "4K Monitor", "usage": 1.2, "hours": 8.5, "efficiency": 92},
+        {"name": "LED Desk Light", "usage": 0.4, "hours": 9, "efficiency": 98},
+        {"name": "Wireless Charger", "usage": 0.3, "hours": 4, "efficiency": 88}
+      ],
+      "weeklyTrend": [19.2, 21.1, 18.8, 17.4, 20.3, 15.8, 13.1],
+      "carbonFootprint": 0.045,
+      "costImpact": 17.9,
+      "topRecommendation": "Continue excellent energy management practices",
+      "achievements": ["Carbon Hero", "Efficiency Expert", "Green Leader", "Innovation Award"],
+      "department": "Engineering",
+      "workingPattern": "Hybrid (4 days office)"
+    },
+    "2": {
+      "id": 2,
+      "name": "Michael Thompson",
+      "totalMonthly": 158,
+      "dailyAverage": 5.3,
+      "devices": [
+        {"name": "Gaming Laptop", "usage": 3.8, "hours": 9.5, "efficiency": 85},
+        {"name": "Ultrawide Monitor", "usage": 1.8, "hours": 9.5, "efficiency": 88},
+        {"name": "Server Rack", "usage": 1.2, "hours": 24, "efficiency": 94},
+        {"name": "Network Equipment", "usage": 0.5, "hours": 24, "efficiency": 96}
+      ],
+      "weeklyTrend": [25.2, 27.8, 24.1, 22.6, 26.1, 20.3, 16.8],
+      "carbonFootprint": 0.059,
+      "costImpact": 22.1,
+      "topRecommendation": "Server optimization reduced consumption by 30%",
+      "achievements": ["Server Optimizer", "Infrastructure Hero", "Energy Saver"],
+      "department": "DevOps",
+      "workingPattern": "Full-time remote"
+    },
+    "3": {
+      "id": 3,
+      "name": "Priya Patel",
+      "totalMonthly": 142,
+      "dailyAverage": 4.7,
+      "devices": [
+        {"name": "iMac 27\"", "usage": 3.1, "hours": 8, "efficiency": 89},
+        {"name": "Graphics Tablet", "usage": 1.0, "hours": 6, "efficiency": 94},
+        {"name": "LED Ring Light", "usage": 0.4, "hours": 4, "efficiency": 92},
+        {"name": "Studio Speakers", "usage": 0.2, "hours": 8, "efficiency": 91}
+      ],
+      "weeklyTrend": [22.4, 24.8, 21.2, 19.8, 23.1, 16.9, 14.2],
+      "carbonFootprint": 0.053,
+      "costImpact": 19.9,
+      "topRecommendation": "LED upgrade reduced lighting consumption by 40%",
+      "achievements": ["Lighting Optimizer", "Creative Excellence", "Design Award"],
+      "department": "Design",
+      "workingPattern": "Hybrid (3 days office)"
+    },
+    "4": {
+      "id": 4,
+      "name": "James Wilson",
+      "totalMonthly": 168,
+      "dailyAverage": 5.6,
+      "devices": [
+        {"name": "Workstation PC", "usage": 4.2, "hours": 9, "efficiency": 81},
+        {"name": "Dual 32\" Monitors", "usage": 2.8, "hours": 9, "efficiency": 86},
+        {"name": "3D Printer", "usage": 1.8, "hours": 3, "efficiency": 78},
+        {"name": "Testing Equipment", "usage": 1.2, "hours": 5, "efficiency": 89}
+      ],
+      "weeklyTrend": [26.8, 29.4, 25.1, 23.7, 27.9, 21.2, 17.8],
+      "carbonFootprint": 0.063,
+      "costImpact": 23.5,
+      "topRecommendation": "Smart scheduling reduced 3D printer energy by 25%",
+      "achievements": ["Smart Scheduler", "Innovation Builder"],
+      "department": "Engineering",
+      "workingPattern": "Full-time office"
+    },
+    "5": {
+      "id": 5,
+      "name": "Lisa Garcia",
+      "totalMonthly": 158,
+      "dailyAverage": 5.3,
+      "devices": [
+        {"name": "MacBook Air", "usage": 2.6, "hours": 8, "efficiency": 88},
+        {"name": "External Monitor", "usage": 1.5, "hours": 8, "efficiency": 90},
+        {"name": "Webcam & Lights", "usage": 0.9, "hours": 6, "efficiency": 82},
+        {"name": "Espresso Machine", "usage": 0.3, "hours": 2, "efficiency": 65}
+      ],
+      "weeklyTrend": [25.1, 27.8, 23.9, 22.4, 26.2, 19.1, 16.8],
+      "carbonFootprint": 0.059,
+      "costImpact": 22.1,
+      "topRecommendation": "Efficient video call settings saved 20% energy",
+      "achievements": ["Video Optimizer", "Team Collaborator"],
+      "department": "Marketing",
+      "workingPattern": "Hybrid (2 days office)"
+    },
+    "6": {
+      "id": 6,
+      "name": "David Kim",
+      "totalMonthly": 175,
+      "dailyAverage": 5.8,
+      "devices": [
+        {"name": "Desktop PC", "usage": 3.5, "hours": 9.5, "efficiency": 79},
+        {"name": "Triple Monitors", "usage": 3.2, "hours": 9.5, "efficiency": 84},
+        {"name": "Printer/Scanner", "usage": 0.6, "hours": 3, "efficiency": 72},
+        {"name": "Mini Fridge", "usage": 0.5, "hours": 24, "efficiency": 85}
+      ],
+      "weeklyTrend": [28.0, 30.8, 26.9, 24.8, 29.3, 22.4, 18.9],
+      "carbonFootprint": 0.066,
+      "costImpact": 24.5,
+      "topRecommendation": "Monitor power saving enabled - 15% reduction achieved",
+      "achievements": ["Power Saver", "Operations Stable"],
+      "department": "Operations",
+      "workingPattern": "Full-time office"
+    },
+    "7": {
+      "id": 7,
+      "name": "Emma Johnson",
+      "totalMonthly": 168,
+      "dailyAverage": 5.6,
+      "devices": [
+        {"name": "Surface Laptop", "usage": 2.8, "hours": 8.5, "efficiency": 86},
+        {"name": "Monitor", "usage": 1.9, "hours": 8.5, "efficiency": 88},
+        {"name": "Phone Charger", "usage": 0.2, "hours": 6, "efficiency": 89},
+        {"name": "Efficient Heater", "usage": 0.7, "hours": 4, "efficiency": 85}
+      ],
+      "weeklyTrend": [26.9, 29.1, 25.2, 23.7, 27.4, 21.1, 18.3],
+      "carbonFootprint": 0.063,
+      "costImpact": 23.5,
+      "topRecommendation": "Heater upgrade reduced energy consumption by 30%",
+      "achievements": ["Heating Optimizer", "People First"],
+      "department": "HR",
+      "workingPattern": "Hybrid (3 days office)"
+    },
+    "8": {
+      "id": 8,
+      "name": "Marcus Rodriguez",
+      "totalMonthly": 215,
+      "dailyAverage": 7.2,
+      "devices": [
+        {"name": "Efficient Laptop", "usage": 4.8, "hours": 10, "efficiency": 75},
+        {"name": "Large Monitor", "usage": 2.0, "hours": 10, "efficiency": 82},
+        {"name": "Presentation Screen", "usage": 0.9, "hours": 4, "efficiency": 78},
+        {"name": "Phone Chargers", "usage": 0.5, "hours": 8, "efficiency": 85}
+      ],
+      "weeklyTrend": [34.4, 37.8, 31.2, 28.9, 35.6, 25.8, 22.1],
+      "carbonFootprint": 0.081,
+      "costImpact": 30.1,
+      "topRecommendation": "Laptop upgrade reduced consumption by 20% - great progress!",
+      "achievements": ["Equipment Upgrader", "Sales Driver"],
+      "department": "Sales",
+      "workingPattern": "Full-time office + Travel"
+    }
+  },
   "realTimeUsage": [
-    { "time": "10am", "kWe": 400 },
-    { "time": "11am", "kWe": 450 },
-    { "time": "12pm", "kWe": 550 },
-    { "time": "1pm", "kWe": 500 },
-    { "time": "2pm", "kWe": 620 },
-    { "time": "3pm", "kWe": 700 }
+    {"time": "9am", "kWe": 280},
+    {"time": "10am", "kWe": 385},
+    {"time": "11am", "kWe": 420},
+    {"time": "12pm", "kWe": 395},
+    {"time": "1pm", "kWe": 315},
+    {"time": "2pm", "kWe": 465},
+    {"time": "3pm", "kWe": 520},
+    {"time": "4pm", "kWe": 485},
+    {"time": "5pm", "kWe": 340},
+    {"time": "6pm", "kWe": 220}
   ],
   "departmentTargets": [
-    { "name": "Engineering", "progress": 62 },
-    { "name": "Support", "progress": 48 }
+    {"name": "Engineering", "progress": 89},
+    {"name": "DevOps", "progress": 92},
+    {"name": "Design", "progress": 88},
+    {"name": "Marketing", "progress": 85},
+    {"name": "Operations", "progress": 82},
+    {"name": "HR", "progress": 79},
+    {"name": "Sales", "progress": 76}
   ],
   "quickActions": [
-    "Assign target to new employee",
-    "Start 'Green Hours' challenge"
+    "🌱 Celebrate 18% carbon footprint reduction this month",
+    "📊 Review outstanding energy efficiency achievements",
+    "⚡ Plan next phase of equipment upgrade program",
+    "🎯 Set ambitious Q4 carbon reduction targets",
+    "🏆 Recognize top carbon reduction contributors"
   ]
 }

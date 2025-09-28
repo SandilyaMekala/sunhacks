@@ -1,111 +1,107 @@
 {
   "adminInfo": {
-    "loggedAs": "Company Admin (Acme Labs)"
+    "loggedAs": "Energy Manager (TechFlow Solutions)"
   },
   "companySummary": {
-    "name": "Acme Labs",
-    "todayKWh": 3240,
-    "todayCost": 482,
-    "todayCO2": 1.34,
-    "comparisonPercent": -6,
+    "name": "TechFlow Solutions",
+    "todayKWh": 2840,
+    "todayCost": 398,
+    "todayCO2": 1.12,
+    "comparisonPercent": -8,
     "comparisonPeriod": "last week",
-    "totalEmployees": 6,
-    "avgPerEmployee": 540,
-    "topPerformer": "Eva Singh",
-    "needsAttention": "Diego Mar"
-  },
-  "companyInsights": {
-    "monthlyTrend": [
-      {"month": "Jan", "consumption": 89500, "cost": 13425, "co2": 37.2},
-      {"month": "Feb", "consumption": 85200, "cost": 12780, "co2": 35.4},
-      {"month": "Mar", "consumption": 91200, "cost": 13680, "co2": 37.9},
-      {"month": "Apr", "consumption": 87800, "cost": 13170, "co2": 36.5},
-      {"month": "May", "consumption": 83400, "cost": 12510, "co2": 34.7}
-    ],
-    "departmentComparison": [
-      {"name": "Engineering", "consumption": 45200, "employees": 3, "efficiency": 85},
-      {"name": "Support", "consumption": 38200, "employees": 2, "efficiency": 78},
-      {"name": "Operations", "consumption": 12600, "employees": 1, "efficiency": 92}
-    ],
-    "peakUsageHours": ["10am-11am", "2pm-4pm"],
-    "energySavingOpportunities": [
-      {"area": "Lighting", "potential": "15%", "cost": "$2,400/year"},
-      {"area": "HVAC", "potential": "12%", "cost": "$1,900/year"},
-      {"area": "Equipment", "potential": "8%", "cost": "$1,200/year"}
-    ]
+    "totalEmployees": 8,
+    "avgPerEmployee": 355,
+    "topPerformer": "Sarah Chen",
+    "needsAttention": "Marcus Rodriguez"
   },
   "employeeData": [
     { 
       "id": 1,
-      "name": "Anita Rao", 
-      "target": 240, 
-      "used": 112, 
-      "forecast": -10, 
+      "name": "Sarah Chen", 
+      "target": 280, 
+      "used": 145, 
+      "forecast": -12, 
       "unit": "kWh/mo",
       "department": "Engineering",
-      "efficiency": 92,
-      "rank": 2,
-      "lastActive": "2025-09-28T14:30:00Z"
+      "efficiency": 96,
+      "rank": 1
     },
     { 
       "id": 2,
-      "name": "Ben Thomas", 
-      "target": 220, 
-      "used": 136, 
-      "forecast": -3, 
+      "name": "Michael Thompson", 
+      "target": 320, 
+      "used": 178, 
+      "forecast": -8, 
       "unit": "kWh/mo",
-      "department": "Support",
-      "efficiency": 78,
-      "rank": 4,
-      "lastActive": "2025-09-28T16:15:00Z"
+      "department": "DevOps",
+      "efficiency": 89,
+      "rank": 2
     },
     { 
       "id": 3,
-      "name": "Chen Li", 
-      "target": 260, 
-      "used": 170, 
-      "forecast": -15, 
+      "name": "Priya Patel", 
+      "target": 290, 
+      "used": 168, 
+      "forecast": -5, 
       "unit": "kWh/mo",
-      "department": "Engineering",
-      "efficiency": 88,
-      "rank": 3,
-      "lastActive": "2025-09-28T15:45:00Z"
+      "department": "Design",
+      "efficiency": 87,
+      "rank": 3
     },
     { 
       "id": 4,
-      "name": "Diego Mar", 
-      "target": 250, 
-      "used": 190, 
-      "forecast": 6, 
+      "name": "James Wilson", 
+      "target": 310, 
+      "used": 195, 
+      "forecast": -2, 
       "unit": "kWh/mo",
       "department": "Engineering",
-      "efficiency": 65,
-      "rank": 6,
-      "lastActive": "2025-09-28T13:20:00Z"
+      "efficiency": 83,
+      "rank": 4
     },
     { 
       "id": 5,
-      "name": "Eva Singh", 
-      "target": 230, 
-      "used": 115, 
-      "forecast": -8, 
+      "name": "Lisa Garcia", 
+      "target": 270, 
+      "used": 185, 
+      "forecast": 3, 
       "unit": "kWh/mo",
-      "department": "Support",
-      "efficiency": 95,
-      "rank": 1,
-      "lastActive": "2025-09-28T16:00:00Z"
+      "department": "Marketing",
+      "efficiency": 76,
+      "rank": 5
     },
     { 
       "id": 6,
-      "name": "Fatima Noor", 
-      "target": 210, 
-      "used": 160, 
-      "forecast": -1, 
+      "name": "David Kim", 
+      "target": 300, 
+      "used": 208, 
+      "forecast": 4, 
       "unit": "kWh/mo",
       "department": "Operations",
-      "efficiency": 82,
-      "rank": 5,
-      "lastActive": "2025-09-28T14:10:00Z"
+      "efficiency": 74,
+      "rank": 6
+    },
+    { 
+      "id": 7,
+      "name": "Emma Johnson", 
+      "target": 260, 
+      "used": 195, 
+      "forecast": 8, 
+      "unit": "kWh/mo",
+      "department": "HR",
+      "efficiency": 69,
+      "rank": 7
+    },
+    { 
+      "id": 8,
+      "name": "Marcus Rodriguez", 
+      "target": 340, 
+      "used": 268, 
+      "forecast": 15, 
+      "unit": "kWh/mo",
+      "department": "Sales",
+      "efficiency": 62,
+      "rank": 8
     }
   ],
   "employeeFootprints": {

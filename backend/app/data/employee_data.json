@@ -1,43 +1,62 @@
 {
   "employeeInfo": {
-    "loggedAs": "Employee (Acme Labs)"
+    "loggedAs": "Employee (Sarah Chen - TechFlow Solutions)"
   },
   "companyTarget": {
-    "targetKWh": 230,
-    "currentKWh": 112,
-    "progressPercent": 49,
+    "targetKWh": 280,
+    "currentKWh": 128,
+    "progressPercent": 46,
     "unit": "kWh"
   },
   "energyRings": {
-    "today": { "used": 7.8, "target": 10 },
-    "week": { "used": 38, "target": 50 },
-    "month": { "used": 112, "target": 230 }
+    "today": { "used": 4.3, "target": 9 },
+    "week": { "used": 27.8, "target": 65 },
+    "month": { "used": 128, "target": 280 }
   },
-  "teamProgress": { "you": 49, "avgDept": 54, "topPeer": 38 },
+  "teamProgress": { "you": 46, "avgDept": 55, "topPeer": 35 },
   "realTimeUsage": [
-    { "hour": "8am", "usage": 500 },
-    { "hour": "9am", "usage": 550 },
-    { "hour": "10am", "usage": 700 },
-    { "hour": "11am", "usage": 650 },
-    { "hour": "12pm", "usage": 800 },
-    { "hour": "1pm", "usage": 750 },
-    { "hour": "2pm", "usage": 900 },
-    { "hour": "3pm", "usage": 850 }
+    { "hour": "8am", "usage": 380 },
+    { "hour": "9am", "usage": 520 },
+    { "hour": "10am", "usage": 580 },
+    { "hour": "11am", "usage": 640 },
+    { "hour": "12pm", "usage": 610 },
+    { "hour": "1pm", "usage": 550 },
+    { "hour": "2pm", "usage": 690 },
+    { "hour": "3pm", "usage": 740 },
+    { "hour": "4pm", "usage": 680 },
+    { "hour": "5pm", "usage": 480 }
   ],
   "myDevices": [
-    { "name": "Laptop/Desktop", "usage": 3.0, "unit": "kWh" },
-    { "name": "Monitor", "usage": 1.2, "unit": "kWh" },
-    { "name": "Docking Station", "usage": 0.8, "unit": "kWh" },
-    { "name": "Lighting", "usage": 1.0, "unit": "kWh" },
-    { "name": "Printer/Scanner", "usage": 0.6, "unit": "kWh" },
-    { "name": "AC/Fan/Heater", "usage": 2.4, "unit": "kWh" }
+    { 
+      "name": "MacBook Pro M2", 
+      "usage": 2.4, 
+      "unit": "kWh"
+    },
+    { 
+      "name": "4K Monitor", 
+      "usage": 1.2, 
+      "unit": "kWh"
+    },
+    { 
+      "name": "LED Desk Light", 
+      "usage": 0.4, 
+      "unit": "kWh"
+    },
+    { 
+      "name": "Wireless Charger", 
+      "usage": 0.3, 
+      "unit": "kWh"
+    }
   ],
   "nudges": [
-    "Delay laptop charge to 9-11 pm → -12% cost",
-    "Dim desk lighting by 20% → -0.2 kWh/day"
+    "🌱 Fantastic! Your carbon footprint is 22% lower than last month",
+    "� You've earned the 'Carbon Hero' achievement - amazing work!",
+    "⚡ Your efficiency improvements are inspiring the entire team!"
   ],
   "recentActivity": [
-    "Auto-scheduled AC to 8-10 pm (off-peak)",
-    "Printer set to duplex by default"
+    "🌟 Achieved 'Carbon Hero' status - 22% reduction in footprint",
+    "✅ Optimized monitor power settings - 15% energy saved",
+    "� Leading department in carbon reduction initiatives", 
+    "🎯 Exceeded monthly efficiency target by 18%"
   ]
 }

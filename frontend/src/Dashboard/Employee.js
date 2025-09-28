@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Employee.css';
-import mockDashboardData from '../json/Employee.json'; // JSON import
+// import mockDashboardData from '../json/Employee.json'; // JSON import - now using API
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -144,37 +144,27 @@ const Employee = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
 
       try {
-        const response = await fetch('/api/admin/dashboard');
+        const response = await fetch('http://localhost:8000/api/employee/dashboard');
         if (!response.ok) throw new Error('Network response not ok');
         const apiData = await response.json();
         setData(apiData);
       } catch (err) {
         console.error('Failed to fetch dashboard data:', err);
-        setError('Failed to load admin data.');
-        // fallback to mock data
-        setData(companyAdminData);
+        setError('Failed to load employee data. Make sure the backend server is running on port 8000.');
+        // You can add fallback to mock data if needed:
+        // setData(mockDashboardData);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);*/
-
-  useEffect(() => {
-    try {
-      setData(mockDashboardData);
-      setLoading(false);
-    } catch (err) {
-      setError("Failed to load data");
-      setLoading(false);
-    }
   }, []);
 
   if (loading) return <div className="loading-state">Loading Energy Dashboard...</div>;

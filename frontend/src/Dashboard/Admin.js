@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import companyAdminData from '../json/Admin.json';
+// import companyAdminData from '../json/Admin.json'; // Now using API
 import './Admin.css';
 import {
   Chart as ChartJS,
@@ -134,35 +134,31 @@ const QuickActions = ({ actions }) => (
 );
 
 const Admin = () => {
-  const [data, setData] = useState(companyAdminData);
-  const [loading, setLoading] = useState(false); 
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
 
       try {
-        const response = await fetch('/api/admin/dashboard');
+        const response = await fetch('http://localhost:8000/api/admin/dashboard');
         if (!response.ok) throw new Error('Network response not ok');
         const apiData = await response.json();
         setData(apiData);
       } catch (err) {
         console.error('Failed to fetch dashboard data:', err);
-        setError('Failed to load admin data.');
-        setData(companyAdminData); // fallback to JSON
+        setError('Failed to load admin data. Make sure the backend server is running on port 8000.');
+        // You can add fallback to mock data if needed:
+        // setData(companyAdminData);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);*/
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => setLoading(false), 500);
   }, []);
 
   if (loading) return <div className="loading-state">Loading Admin Dashboard...</div>;

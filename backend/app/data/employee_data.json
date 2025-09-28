@@ -48,15 +48,164 @@
       "unit": "kWh"
     }
   ],
+  "myTasks": [
+    {
+      "name": "Video Conference Meetings",
+      "category": "Communication",
+      "duration": "3.2 hours",
+      "carbonFootprint": 0.85,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "Daily team meetings and client calls",
+      "carbonIntensity": "Medium",
+      "tips": "💡 Use audio-only when possible to reduce bandwidth"
+    },
+    {
+      "name": "Meeting Room Bookings",
+      "category": "Office Operations",
+      "duration": "0.3 hours", 
+      "carbonFootprint": 0.15,
+      "unit": "kg CO2e",
+      "efficiency": "Excellent",
+      "description": "Booking and using conference rooms (3 rooms today)",
+      "carbonIntensity": "Low",
+      "tips": "✅ Digital booking system reduces paper waste"
+    },
+    {
+      "name": "Coffee Machine Usage",
+      "category": "Office Operations",
+      "duration": "0.5 hours",
+      "carbonFootprint": 0.45,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "4 coffee breaks using office espresso machine",
+      "carbonIntensity": "Medium",
+      "tips": "☕ Consider bringing a reusable cup to reduce waste"
+    },
+    {
+      "name": "Printer & Scanner Usage",
+      "category": "Office Equipment",
+      "duration": "0.8 hours",
+      "carbonFootprint": 0.35,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "Printing documents and scanning reports",
+      "carbonIntensity": "Medium",
+      "tips": "🖨️ Use duplex printing and scan-to-email to save paper"
+    },
+    {
+      "name": "Air Conditioning Controls",
+      "category": "Climate Control",
+      "duration": "8.0 hours",
+      "carbonFootprint": 1.2,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "Office temperature adjustments and HVAC usage",
+      "carbonIntensity": "High",
+      "tips": "❄️ Set AC to 72°F instead of 68°F to save 15% energy"
+    },
+    {
+      "name": "Elevator Usage",
+      "category": "Building Systems",
+      "duration": "0.2 hours",
+      "carbonFootprint": 0.08,
+      "unit": "kg CO2e",
+      "efficiency": "Excellent",
+      "description": "12 elevator trips between floors",
+      "carbonIntensity": "Very Low",
+      "tips": "🏃 Consider stairs for 1-2 floors to reduce elevator usage"
+    },
+    {
+      "name": "Office Lighting Controls",
+      "category": "Building Systems",
+      "duration": "8.0 hours",
+      "carbonFootprint": 0.25,
+      "unit": "kg CO2e",
+      "efficiency": "Excellent",
+      "description": "Smart LED lighting and natural light usage",
+      "carbonIntensity": "Very Low",
+      "tips": "💡 Motion sensors and daylight dimming working efficiently"
+    },
+    {
+      "name": "Vending Machine Purchases",
+      "category": "Office Operations",
+      "duration": "0.1 hours",
+      "carbonFootprint": 0.12,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "2 snack purchases from office vending machines",
+      "carbonIntensity": "Low",
+      "tips": "🍎 Choose local/organic options when available"
+    },
+    {
+      "name": "Badge Access & Security",
+      "category": "Building Systems",
+      "duration": "0.3 hours",
+      "carbonFootprint": 0.02,
+      "unit": "kg CO2e",
+      "efficiency": "Excellent",
+      "description": "20+ badge swipes for office access",
+      "carbonIntensity": "Very Low",
+      "tips": "✅ RFID system is energy-efficient"
+    },
+    {
+      "name": "Office Phone System",
+      "category": "Communication",
+      "duration": "1.5 hours",
+      "carbonFootprint": 0.18,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "VoIP calls and desk phone usage",
+      "carbonIntensity": "Low",
+      "tips": "📞 VoIP uses less energy than traditional phone systems"
+    },
+    {
+      "name": "Shared Workspace Equipment",
+      "category": "Office Equipment",
+      "duration": "2.0 hours",
+      "carbonFootprint": 0.6,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "Using collaborative spaces and shared monitors",
+      "carbonIntensity": "Medium",
+      "tips": "🖥️ Shared resources reduce individual device needs"
+    },
+    {
+      "name": "Kitchen Appliances Usage",
+      "category": "Office Operations",
+      "duration": "0.8 hours",
+      "carbonFootprint": 0.28,
+      "unit": "kg CO2e",
+      "efficiency": "Good",
+      "description": "Microwave, refrigerator, and dishwasher usage",
+      "carbonIntensity": "Medium",
+      "tips": "🍽️ Use energy-efficient settings and full loads"
+    }
+  ],
+  "taskSummary": {
+    "totalTasks": 12,
+    "totalCarbonFootprint": 4.53,
+    "averageCarbonPerTask": 0.38,
+    "mostEfficientTask": "Badge Access & Security",
+    "highestImpactTask": "Air Conditioning Controls",
+    "dailyCarbonTarget": 5.0,
+    "carbonProgress": 90.6,
+    "unit": "kg CO2e"
+  },
   "nudges": [
-    "🌱 Fantastic! Your carbon footprint is 22% lower than last month",
-    "� You've earned the 'Carbon Hero' achievement - amazing work!",
-    "⚡ Your efficiency improvements are inspiring the entire team!"
+    "🌱 Fantastic! Your office carbon footprint is 22% lower than last month",
+    "🏆 You've earned the 'Green Office Champion' achievement - amazing work!",
+    "⚡ Your efficient office habits are inspiring the entire team!",
+    "☕ Try bringing a reusable coffee cup - you could save 0.05 kg CO2e daily",
+    "🏃 Taking stairs instead of elevators 3x/day could reduce your footprint by 8%"
   ],
   "recentActivity": [
-    "🌟 Achieved 'Carbon Hero' status - 22% reduction in footprint",
-    "✅ Optimized monitor power settings - 15% energy saved",
-    "� Leading department in carbon reduction initiatives", 
-    "🎯 Exceeded monthly efficiency target by 18%"
+    "🌟 Achieved 'Green Office Champion' status - 22% reduction in office footprint",
+    "☕ Started using reusable coffee cup - 15% reduction in break room emissions",
+    "📈 Leading department in sustainable office practices", 
+    "🎯 Exceeded daily office efficiency target by 18%",
+    "🏃 Took stairs instead of elevator 8 times today - saved 0.12 kg CO2e",
+    "💡 Optimized desk lighting schedule - 20% energy reduction",
+    "🖨️ Used duplex printing for all documents - saved 25 sheets of paper"
   ]
 }

@@ -1,158 +1,196 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
+import './Employee.css';
+import mockDashboardData from '../json/Employee.json'; // JSON import
+import { Line } from 'react-chartjs-2';
 import {
-  Bell,
-  Monitor,
-  HardDrive,
-  Flame,
-  Package,
-  Power,
-} from "lucide-react";
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 
-const jsonData = {
-  devices: [
-    { name: "Monitor", co2: 1.2, icon: "Monitor", color: "#34D399" }, // green
-    { name: "Docking Station", co2: 0.8, icon: "HardDrive", color: "#FBBF24" }, // yellow
-    { name: "Space Heater", co2: 2.5, icon: "Flame", color: "#EF4444" }, // red
-  ],
-  shipments: [
-    { name: "Shipment", co2: 18.2, color: "#3B82F6", note: "Delay delivery to 9-11 p.m. saves 14% CO2" }, // blue
-  ],
-  targets: ["Switch off docking station when not in use"],
-  totalGoal: 30,
-};
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-export default function EmployeeDashboard() {
-  const [data, setData] = useState(null);
+// =================== Child Components ===================
 
-  useEffect(() => {
-    // fetch("/api/dashboard")
-    //   .then(res => res.json())
-    //   .then(resData => setData(resData))
-    //   .catch(err => console.error(err));
+const CompanyTarget = ({ targetKWh, currentKWh, progressPercent, unit }) => (
+  <div className="company-target-bar" style={{ 
+    backgroundColor: '#e6ffe6', padding: '8px', borderRadius: '4px', marginBottom: '20px', fontWeight: 'bold'
+  }}>
+    <span style={{ 
+      backgroundColor: '#38a169', color: 'white', padding: '4px 8px', borderRadius: '4px', marginRight: '10px' 
+    }}>
+      Company Target (Month): {targetKWh} {unit}
+    </span>
+    <span style={{color: '#38a169'}}>
+      You are at {currentKWh} {unit} ({progressPercent}%)
+    </span>
+  </div>
+);
 
-    setData(jsonData);
-  }, []);
+const EnergyRings = ({ today, week, month }) => (
+  <div className="energy-rings-container" style={{ position: 'relative', width: '200px', height: '200px', margin: '20px auto' }}>
+    <div style={{ position: 'absolute', width: '80px', height: '80px', top: '60px', left: '60px', borderRadius: '50%', border: '4px solid #38a169', opacity: 0.5 }} />
+    <div style={{ position: 'absolute', width: '120px', height: '120px', top: '40px', left: '40px', borderRadius: '50%', border: '4px solid #4299e1', opacity: 0.5 }} />
+    <div style={{ position: 'absolute', width: '160px', height: '160px', top: '20px', left: '20px', borderRadius: '50%', border: '4px solid #f6ad55', opacity: 0.5 }} />
+    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center' }}>
+      <p style={{ margin: 0, fontSize: '12px' }}>Today {today.used.toFixed(1)} / {today.target} kWh</p>
+      <p style={{ margin: 0, fontSize: '12px' }}>Week {week.used} / {week.target} kWh</p>
+      <p style={{ margin: 0, fontSize: '12px' }}>Month {month.used} / {month.target} kWh</p>
+    </div>
+  </div>
+);
 
-  if (!data) return <p>Loading...</p>;
+const TeamProgress = ({ you, avgDept, topPeer }) => (
+  <div className="card team-progress">
+    <h3>Team Progress (this month)</h3>
+    {[{ label: 'You', percent: you }, { label: 'Avg Dept', percent: avgDept }, { label: 'Top Peer', percent: topPeer }].map(item => (
+      <div key={item.label} style={{ marginBottom: '10px' }}>
+        <p style={{ margin: '0 0 4px 0', fontWeight: 'bold' }}>{item.label}</p>
+        <div style={{ height: '15px', backgroundColor: '#e2e8f0', borderRadius: '4px', overflow: 'hidden' }}>
+          <div style={{ width: `${item.percent}%`, height: '100%', backgroundColor: '#38a169' }} />
+        </div>
+        <p style={{ margin: 0, float: 'right', fontSize: '14px', marginTop: '-18px' }}>{item.percent}%</p>
+      </div>
+    ))}
+  </div>
+);
 
-  const iconMap = { Monitor, HardDrive, Flame, Package, Power };
+const RealTimeUsage = ({ data }) => {
+  const chartData = {
+    labels: data.map(point => point.hour),
+    datasets: [
+      {
+        label: 'Usage (W)',
+        data: data.map(point => point.usage),
+        borderColor: '#38a169',
+        backgroundColor: 'rgba(56, 161, 105, 0.2)',
+        tension: 0.3,
+        fill: true,
+        pointRadius: 4,
+      },
+    ],
+  };
 
-  const co2Sources = [...data.devices, ...data.shipments];
-  const totalCO2 = co2Sources.reduce((sum, item) => sum + item.co2, 0);
-
-  const radius = 16;
-  const circumference = 2 * Math.PI * radius;
-
-  let cumulativePercent = 0;
-  const segments = co2Sources.map((item) => {
-    const percent = (item.co2 / data.totalGoal) * 100;
-    const dashArray = (percent / 100) * circumference;
-    const dashOffset = circumference - (cumulativePercent / 100) * circumference;
-    cumulativePercent += percent;
-    return { ...item, dashArray, dashOffset };
-  });
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: true },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { stepSize: 100 },
+      },
+    },
+  };
 
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
-      <div className="max-w-6xl mx-auto grid grid-cols-3 gap-6">
-        {/* Left Column */}
-        <div className="col-span-2 bg-white p-6 rounded-2xl shadow-md">
-          {/* Header */}
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-semibold">Good Morning</h2>
-            <Bell className="w-6 h-6 text-gray-500" />
-          </div>
+    <div className="card real-time-usage" style={{ height: '200px' }}>
+      <h3>Real-Time Usage (W)</h3>
+      <div style={{ height: '140px', padding: '10px' }}>
+        <Line data={chartData} options={chartOptions} />
+      </div>
+    </div>
+  );
+};
 
-          {/* Carbon Goal Graph */}
-          <div className="flex items-center mb-8 space-x-8">
-            <div className="relative flex items-center justify-center w-40 h-40">
-              <svg className="absolute inset-0" viewBox="0 0 36 36">
-                {/* Background Circle */}
-                <circle
-                  cx="18"
-                  cy="18"
-                  r={radius}
-                  stroke="#E5E7EB"
-                  strokeWidth="4"
-                  fill="none"
-                />
-                {/* Individual Segments */}
-                {segments.map((seg, idx) => (
-                  <circle
-                    key={idx}
-                    cx="18"
-                    cy="18"
-                    r={radius}
-                    stroke={seg.color}
-                    strokeWidth="4"
-                    fill="none"
-                    strokeDasharray={`${seg.dashArray} ${circumference}`}
-                    strokeDashoffset={seg.dashOffset}
-                    strokeLinecap="butt"
-                    transform="rotate(-90 18 18)"
-                  />
-                ))}
-              </svg>
-              <span className="text-3xl font-bold">{totalCO2.toFixed(1)}</span>
-            </div>
-            <p className="text-gray-500 text-lg">{data.totalGoal} kg CO2 target</p>
-          </div>
+const MyDevices = ({ devices }) => (
+  <div className="card my-devices">
+    <h3>My Devices (today)</h3>
+    <dl>
+      {devices.map(device => (
+        <React.Fragment key={device.name}>
+          <dt style={{ float: 'left', clear: 'left', fontWeight: 'normal' }}>{device.name}</dt>
+          <dd style={{ float: 'right', fontWeight: 'bold' }}>{device.usage.toFixed(1)} {device.unit}</dd>
+        </React.Fragment>
+      ))}
+    </dl>
+  </div>
+);
 
-          {/* Devices */}
-          <div className="mb-8">
-            <h3 className="font-medium text-xl mb-4">My Devices</h3>
-            <ul className="grid grid-cols-3 gap-4">
-              {data.devices.map((device) => {
-                const Icon = iconMap[device.icon];
-                return (
-                  <li
-                    key={device.name}
-                    className="flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-sm"
-                  >
-                    <Icon className="w-6 h-6 text-gray-500 mb-2" />
-                    <span className="font-medium">{device.name}</span>
-                    <span className="text-gray-600 text-sm">{device.co2} kg CO2</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+const Nudges = ({ nudges }) => (
+  <div className="card nudges">
+    <h3>Nudges</h3>
+    <ul>
+      {nudges.map((nudge, index) => <li key={index}>{nudge}</li>)}
+    </ul>
+  </div>
+);
 
-          {/* Shipments */}
-          <div className="mb-8">
-            <h3 className="font-medium text-xl mb-4">My Shipments</h3>
-            {data.shipments.map((shipment, idx) => (
-              <div
-                key={idx}
-                className="p-4 border rounded-lg bg-gray-50 text-sm mb-3"
-              >
-                <div className="flex justify-between items-center mb-1">
-                  <div className="flex items-center space-x-1">
-                    <Package className="w-5 h-5 text-gray-500" />
-                    <span>{shipment.name}</span>
-                  </div>
-                  <span className="text-gray-600">{shipment.co2} kg CO2</span>
-                </div>
-                <p className="text-gray-500 text-xs">{shipment.note}</p>
-              </div>
-            ))}
-          </div>
+const RecentActivity = ({ activity }) => (
+  <div className="card recent-activity">
+    <h3>Recent Activity</h3>
+    <ul>
+      {activity.map((item, index) => <li key={index}>{item}</li>)}
+    </ul>
+  </div>
+);
+
+// =================== Main Dashboard ===================
+
+const Employee = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      setData(mockDashboardData);
+      setLoading(false);
+    } catch (err) {
+      setError("Failed to load data");
+      setLoading(false);
+    }
+  }, []);
+
+  if (loading) return <div className="loading-state">Loading Energy Dashboard...</div>;
+  if (error) return <div className="error-state">{error}</div>;
+  if (!data) return null;
+
+  return (
+    <div className="energy-dashboard-container" style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '1200px', margin: '0 auto', backgroundColor: '#f7fafc' }}>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e2e8f0', paddingBottom: '10px', marginBottom: '20px' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Sprint Energy Coach</h1>
+        <p>Logged in as: <strong>{data.employeeInfo.loggedAs}</strong></p>
+      </header>
+
+      <CompanyTarget {...data.companyTarget} />
+
+      <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>My Energy Dashboard</h2>
+
+      <div className="dashboard-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        <div className="top-left-panel">
+          <EnergyRings {...data.energyRings} />
         </div>
-
-        {/* Right Column - Personal Targets */}
-        <div className="bg-white p-6 rounded-2xl shadow-md">
-          <h3 className="font-medium text-xl mb-4">Personal Targets</h3>
-          {data.targets.map((target, idx) => (
-            <div
-              key={idx}
-              className="p-4 border rounded-lg bg-gray-50 text-sm flex items-center space-x-2 mb-3"
-            >
-              <Power className="w-5 h-5 text-gray-500" />
-              <span>{target}</span>
-            </div>
-          ))}
+        <div className="top-right-panel">
+          <TeamProgress {...data.teamProgress} />
+        </div>
+        <div className="bottom-left-panel" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <RealTimeUsage data={data.realTimeUsage} />
+          <MyDevices devices={data.myDevices} />
+        </div>
+        <div className="bottom-right-panel" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <Nudges nudges={data.nudges} />
+          <RecentActivity activity={data.recentActivity} />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Employee;
